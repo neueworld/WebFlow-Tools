@@ -9,4 +9,3 @@ var readingTime = readTime > 1 ? readTime + ' minutes' : '1 minute';
   
 // Display the read time 
 document.querySelector('[time-to-read]').innerHTML = readingTime;
-}

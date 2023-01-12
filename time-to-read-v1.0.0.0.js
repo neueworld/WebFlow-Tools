@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(){
 // Select the text to read and get the word count
 var postText = document.querySelector('[read-text]').textContent.split(' ').length;
   

@@ -10,7 +10,7 @@ function sharePage(event) {
   if (network === "facebook") {
     shareFacebook();
   }
-  if (network === "pinteres") {
+  if (network === "pinterest") {
     sharePinterest();
   }
   if (network === "twitter") {

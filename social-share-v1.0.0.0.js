@@ -1,4 +1,3 @@
-<script>
 const shareButtons = document.querySelectorAll("[nw-share]");
 
 shareButtons.forEach(button => {
@@ -56,4 +55,3 @@ function shareReddit() {
     const url = "https://www.reddit.com/submit?url="+encodeURIComponent(window.location.href);
     window.open(url, "reddit-share-dialog", "width=626,height=436,left="+(screen.width/2-313)+",top="+(screen.height/2-218));
 }
-</script>

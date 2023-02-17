@@ -2,7 +2,6 @@
 
 <button id="toggleButton"></button> 
 
-<script>
   var toggleButton = document.getElementById("toggleButton");
   var body = document.querySelector("body");
   var links = document.querySelectorAll("a");
@@ -38,4 +37,3 @@
       localStorage.setItem("mode", "light");
     }
   });
-</script>  

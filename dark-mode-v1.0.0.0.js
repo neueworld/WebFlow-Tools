@@ -1,7 +1,5 @@
 <!-- Change mode -->
 
-<button id="toggleButton"></button> 
-
   var toggleButton = document.getElementById("toggleButton");
   var body = document.querySelector("body");
   var links = document.querySelectorAll("a");

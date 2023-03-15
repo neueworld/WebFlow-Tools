@@ -9,7 +9,7 @@ async function generateSummary(apiKey, text) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${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}`,
+      'Authorization': `Bearer ${apiKey}`,
     },
     body: JSON.stringify(data),
   });

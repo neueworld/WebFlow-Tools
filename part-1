@@ -34,9 +34,7 @@ if (currentMode === 'light') {
   body.classList.remove(...body.classList);
   body.classList.add(darkClasses[0]);
 }
-</script>
 
-<script>
 const body = document.querySelector('body');
 const currentMode = body.getAttribute("data-mode");
 const lightElement = document.querySelector('[data-mode="light"]');

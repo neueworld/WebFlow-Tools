@@ -1,6 +1,6 @@
-let lightElements = document.querySelectorAll('[light-toggle]');
-let darkElements = document.querySelectorAll('[dark-toggle]');
-let body = document.querySelector('body');
+const lightElements = document.querySelectorAll('[light-toggle]');
+const darkElements = document.querySelectorAll('[dark-toggle]');
+const body = document.querySelector('body');
 
 lightElements.forEach(element => {
   element.addEventListener('click', () => {
@@ -22,7 +22,7 @@ darkElements.forEach(element => {
   });
 });
 
-let currentMode = localStorage.getItem('mode');
+const currentMode = localStorage.getItem('mode');
 if (currentMode === 'light') {
   body.setAttribute("data-mode", "light");
   const lightClasses = lightElements[0].getAttribute("class").split(" ");
@@ -32,5 +32,21 @@ if (currentMode === 'light') {
   body.setAttribute("data-mode", "dark");
   const darkClasses = darkElements[0].getAttribute("class").split(" ");
   body.classList.remove(...body.classList);
+  body.classList.add(darkClasses[0]);
+}
+</script>
+
+<script>
+const body = document.querySelector('body');
+const currentMode = body.getAttribute("data-mode");
+const lightElement = document.querySelector('[data-mode="light"]');
+const darkElement = document.querySelector('[data-mode="dark"]');
+
+const lightClasses = lightElement.getAttribute("class").split(" ");
+const darkClasses = darkElement.getAttribute("class").split(" ");
+
+if (currentMode === "light") {
+  body.classList.add(lightClasses[0]);
+} else if (currentMode === "dark") {
   body.classList.add(darkClasses[0]);
 }

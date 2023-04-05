@@ -1,6 +1,6 @@
-const lightElements = document.querySelectorAll('[light-toggle]');
-const darkElements = document.querySelectorAll('[dark-toggle]');
-const body = document.querySelector('body');
+let lightElements = document.querySelectorAll('[light-toggle]');
+let darkElements = document.querySelectorAll('[dark-toggle]');
+let body = document.querySelector('body');
 
 lightElements.forEach(element => {
   element.addEventListener('click', () => {
@@ -22,7 +22,7 @@ darkElements.forEach(element => {
   });
 });
 
-const currentMode = localStorage.getItem('mode');
+let currentMode = localStorage.getItem('mode');
 if (currentMode === 'light') {
   body.setAttribute("data-mode", "light");
   const lightClasses = lightElements[0].getAttribute("class").split(" ");
@@ -34,6 +34,38 @@ if (currentMode === 'light') {
   body.classList.remove(...body.classList);
   body.classList.add(darkClasses[0]);
 }
+
+/*const body = document.querySelector('body');*/
+
+currentMode = body.getAttribute("data-mode");
+lightElement = document.querySelector('[data-mode="light"]');
+darkElement = document.querySelector('[data-mode="dark"]');
+
+const lightClasses = lightElement.getAttribute("class").split(" ");
+const darkClasses = darkElement.getAttribute("class").split(" ");
+
+if (currentMode === "light") {
+  body.classList.add(lightClasses[0]);
+} else if (currentMode === "dark") {
+  body.classList.add(darkClasses[0]);
+}
+
+const style = document.createElement('style');
+style.innerHTML = `
+  [cta] {
+    background-color: transparent;
+    color: var(--body-bg-color);
+    border-color: currentColor;
+  }
+
+  [link] {
+    background-color: transparent;
+    color: var(--body-bg-color);
+    border-color: currentColor;
+  }
+`;
+document.head.appendChild(style);
+
 const lightToggle = document.querySelector('[light-toggle]');
 const darkToggle = document.querySelector('[dark-toggle]');
 
@@ -46,6 +78,7 @@ darkToggle.addEventListener('click', function() {
   darkToggle.style.zIndex = 1;
   lightToggle.style.zIndex = 2;
 });
+
 const elementsWithNeueBg = document.querySelectorAll('[neue-bg]');
 
 // Define a function to update the background color of the neue-bg elements
@@ -62,6 +95,7 @@ updateNeueBgBackground();
 // Listen for changes to the body element's class and update the neue-bg elements accordingly
 const bodyObserver = new MutationObserver(updateNeueBgBackground);
 bodyObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
 
 function updateTextColors() {
   // Get the body element

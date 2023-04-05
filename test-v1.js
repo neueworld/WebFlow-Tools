@@ -50,21 +50,16 @@ if (currentMode === "light") {
   body.classList.add(darkClasses[0]);
 }
 
-const style = document.createElement('style');
-style.innerHTML = `
-  [cta] {
-    background-color: transparent;
-    color: var(--body-bg-color);
-    border-color: currentColor;
-  }
+cta = document.querySelector('[cta]');
+link = document.querySelector('[link]');
 
-  [link] {
-    background-color: transparent;
-    color: var(--body-bg-color);
-    border-color: currentColor;
-  }
-`;
-document.head.appendChild(style);
+cta.style.backgroundColor = 'transparent';
+cta.style.color = 'var(--body-bg-color)';
+cta.style.borderColor = 'currentColor';
+
+link.style.backgroundColor = 'transparent';
+link.style.color = 'var(--body-bg-color)';
+link.style.borderColor = 'currentColor';
 
 const lightToggle = document.querySelector('[light-toggle]');
 const darkToggle = document.querySelector('[dark-toggle]');

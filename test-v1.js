@@ -50,8 +50,8 @@ if (currentMode === "light") {
   body.classList.add(darkClasses[0]);
 }
 
-cta = document.querySelector('[cta]');
-link = document.querySelector('[link]');
+let cta = document.querySelector('[cta]');
+let link = document.querySelector('[link]');
 
 cta.style.backgroundColor = 'transparent';
 cta.style.color = 'var(--body-bg-color)';

@@ -37,16 +37,16 @@ if (currentMode === 'light') {
 
 /*const body = document.querySelector('body');*/
 
-currentMode = body.getAttribute("data-mode");
-lightElement = document.querySelector('[data-mode="light"]');
-darkElement = document.querySelector('[data-mode="dark"]');
+const currentMode2 = body.getAttribute("data-mode");
+const lightElement = document.querySelector('[data-mode="light"]');
+const darkElement = document.querySelector('[data-mode="dark"]');
 
 const lightClasses = lightElement.getAttribute("class").split(" ");
 const darkClasses = darkElement.getAttribute("class").split(" ");
 
-if (currentMode === "light") {
+if (currentMode2 === "light") {
   body.classList.add(lightClasses[0]);
-} else if (currentMode === "dark") {
+} else if (currentMode2 === "dark") {
   body.classList.add(darkClasses[0]);
 }
 

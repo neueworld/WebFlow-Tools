@@ -312,3 +312,29 @@
   timelineFlex.onchange = function () {
   		calculateChange(); 
   };
+
+// Function to check checkboxes on page load
+function checkInitialCheckboxes() {
+ // Array of checkbox IDs to be checked initially
+  var initialCheckboxes = ["design", "dashboard","complexLow","pagesThree","interactionsLow","cmsLow","animationsLow","seoBasic","timelineTwoMonths","timelineAsap"];
+
+  // Iterate through the checkbox IDs
+  for (var i = 0; i < initialCheckboxes.length; i++) {
+    var checkbox = document.getElementById(initialCheckboxes[i]);
+
+    // Check the checkbox
+    checkbox.checked = true;
+
+    // Set styles for the checked checkboxes
+    checkbox.style.backgroundColor = 'white';
+    checkbox.style.color = 'black';
+  }
+
+  // Trigger the calculateChange function to update the total on page load
+  calculateChange();
+}
+
+// Check the checkboxes on page load
+window.onload = function () {
+checkInitialCheckboxes();
+};

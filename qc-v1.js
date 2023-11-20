@@ -45,8 +45,8 @@
   totalCost = 0;
   timeline = '0';
     
-	if (design.checked) {
-  		totalCost += 5000;
+  if (design.checked) {
+      totalCost += 5000;
     }
   if (development.checked) {
       totalCost += 5000;
@@ -54,16 +54,16 @@
   if (designDev.checked) {
       totalCost += 8000;
     }
-	if (fromScratch.checked) {
-    	if (design.checked || development.checked) {
-        totalCost += 6000;
-      }
+  if (fromScratch.checked) {
+      if (design.checked || development.checked) {
+        	totalCost += 6000;
+      		}
       if (designDev.checked) {
-        totalCost += 10000;
-      }
+        	totalCost += 10000;
+      		}
       if (!design.checked && !development.checked && !designDev.checked) {
-        totalCost += 6000;
-      }
+        	totalCost += 6000;
+      		}
     }
   if (designSystem.checked) {
   		totalCost += 4000;
@@ -252,9 +252,6 @@
   		calculateChange();
   };
   designDev.onchange = function () {
-  		calculateChange();
-  };
-  dashboard.onchange = function () {
   		calculateChange();
   };
   fromScratch.onchange = function () {
